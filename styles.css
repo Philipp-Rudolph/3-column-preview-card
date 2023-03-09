@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --very-light-gray-bg-h-buttons: hsl(0, 0%, 95%);
+  --transparent-white-p: hsla(0, 0%, 100%, 0.75);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  font-size: 15px;
+  padding: 1.25rem;
+  min-height: calc(100vh - 1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--very-light-gray-bg-h-buttons);
+}
+
+.card {
+  width: 920px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.card__col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.card__col:nth-child(1) {
+  background-color: var(--bright-orange);
+}
+.card__col:nth-child(2) {
+  background-color: var(--dark-cyan);
+}
+.card__col:nth-child(3) {
+  background-color: var(--very-dark-cyan);
+}
+
+.card__col img {
+  width: 4rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+.card__col h2 {
+  font-family: "Big Shoulders Display";
+  font-size: 2rem;
+  color: var(--very-light-gray-bg-h-buttons);
+  padding-top: 2rem;
+}
+
+.card__col p {
+  color: var(--transparent-white-p);
+  padding-top: 2rem;
+  line-height: 1.75;
+}
+
+.card__col button {
+  background-color: var(--very-light-gray-bg-h-buttons);
+  color: var(--dark-cyan);
+  width: 70%;
+  border: 1px solid transparent;
+  border-radius: 2rem;
+  padding: 1rem;
+  font-size: 1rem;
+  margin-top: 4rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.card__col:nth-child(1) button {
+  color: var(--bright-orange);
+}
+.card__col:nth-child(2) button {
+  color: var(--dark-cyan);
+}
+
+.card__col:nth-child(3) button {
+  color: var(--very-dark-cyan);
+}
+
+.card__col button:hover {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 325px;
+    height: 1325px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    overflow: auto;
+  }
+  .card__col img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .card__col h2 {
+    font-size: 2rem;
+  }
+  .card__col button {
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+  }
+}
